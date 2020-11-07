@@ -11,10 +11,24 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
-
+.navbar {
+    background-color: white;
+    
+}
+ .navbar-brand #logo {
+    width: 100px;
+    height: 100px;
+}
+.navbar-brand {
+    color:black
+}
+.navbar-nav a {
+    color:black;
+}
 
 .jumbotron {
-    margin-top: 60px;
+    margin-top: 187px;
+
 }
 
     

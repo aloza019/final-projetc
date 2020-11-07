@@ -1,12 +1,12 @@
 import React from "react";
+import mitlog from "../../img/mit.png";
+import { Link } from "react-router-dom";
 
 export function NavMenu() {
 	return (
 		<div>
-			<nav className="navbar fixed-top mr-auto navbar-expand-lg navbar-dark bg-dark ">
-				<a className="navbar-brand" href="#">
-					Start Boostrap
-				</a>
+			<nav className="navbar fixed-top mr-auto navbar-expand-lg  ">
+				<img id="logo" src={mitlog} />
 				<button
 					className="navbar-toggler "
 					type="button"
@@ -15,24 +15,28 @@ export function NavMenu() {
 					aria-controls="navbarNavAltMarkup"
 					aria-expanded="false"
 					aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon" />
+					<span className="navbar-toggler-icon bg-dark" />
 				</button>
 				<div
-					className="collapse navbar-collapse"
+					className="collapse navbar-collapse "
 					id="navbarNavAltMarkup">
 					<div className="navbar-nav ml-auto">
-						<a className="nav-item nav-link active" href="#">
-							Home <span className="sr-only">(current)</span>
-						</a>
-						<a className="nav-item nav-link" href="#">
+						<Link className="nav-item nav-link active" to="/">
+							Home
+							<span className="sr-only">(current)</span>
+						</Link>
+						<Link className="nav-item nav-link" to="/About">
 							About
-						</a>
-						<a className="nav-item nav-link" href="#">
-							Service
-						</a>
-						<a className="nav-item nav-link" href="#">
+						</Link>
+						<Link className="nav-item nav-link" to="/Services">
+							Services
+						</Link>
+						<Link className="nav-item nav-link" to="/Tracking">
+							Tracking
+						</Link>
+						<Link className="nav-item nav-link" to="/Contact">
 							Contact
-						</a>
+						</Link>
 					</div>
 				</div>
 			</nav>

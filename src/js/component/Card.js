@@ -26,3 +26,4 @@ Card.propTypes = {
 	myTittle: PropTypes.string,
 	myPicture: PropTypes.img
 };
+export default Card;

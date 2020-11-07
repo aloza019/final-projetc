@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //include images into your bundle
 //import rigoImage from "../../img/rigo-baby.jpg";
@@ -7,40 +8,39 @@ import { Footer } from "./Footer.js";
 import { Card } from "./Card.js";
 import { NavMenu } from "./NavMenu";
 
+import { About } from "./About";
+import { Contact } from "./Contact.js";
+import { Services } from "./Services.js";
+import { Tracking } from "./Tracking.js";
+
 //create your first component
 export function Home() {
 	return (
 		<div className="container">
-			<NavMenu />
-			<Header />
-			<div className="row">
-				<div className="col-sm">
-					<Card
-						myPicture="https://images.pexels.com/photos/3688760/pexels-photo-3688760.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-						myTittle="My Tittle"
-					/>
-				</div>
-				<div className="col-sm">
-					<Card
-						myPicture="https://images.pexels.com/photos/38565/iphone-visa-business-buying-38565.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-						myTittle="My Tittle2"
-					/>
-				</div>
-				<div className="col-sm">
-					<Card
-						myPicture="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-						myTittle="My Tittle3"
-					/>
-				</div>
-				<div className="col-sm">
-					<Card
-						myPicture="https://images.pexels.com/photos/2173508/pexels-photo-2173508.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-						myTittle="My Tittle"
-					/>
-				</div>
-			</div>
+			<Router>
+				<NavMenu />
+				<Switch>
+					<Route exact path="/">
+						{/* <h1>Home page</h1> */}
+						<Header />
+					</Route>
 
-			<Footer />
+					<Route path="/About" component={About}>
+						<About />
+					</Route>
+
+					<Route path="/Contact" component={Contact}>
+						<Contact />
+					</Route>
+					<Route path="/Services" component={Services}>
+						<Services />
+					</Route>
+					<Route path="/Tracking" component={Tracking}>
+						<Tracking />
+					</Route>
+				</Switch>
+				<Footer />
+			</Router>
 		</div>
 	);
 }
